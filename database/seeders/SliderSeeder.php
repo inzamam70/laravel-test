@@ -1,13 +1,13 @@
 <?php
 
-namespace Pondit\Slider\Seip\Database\Seeders;
+namespace Database\Seeders;
 
 
 use Illuminate\Database\Seeder;
-use App\Models\Slider;
 use Illuminate\Support\Str;
+use Pondit\Slider\Seip\Models\Slider;
 
-class SliderstableSeeder extends Seeder
+class SliderSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -24,6 +24,7 @@ class SliderstableSeeder extends Seeder
                 'caption' => 'E-commerce Technology Is Your Best Bet To Grow',
                 'updated_by' => 'raj@gmail.com',
                 'created_by' => 'inzamam@gmail.com',
+                
             ],
             [
                 'uuid' => Str::random(10),
