@@ -10,12 +10,7 @@ class Slider extends Model
     use HasFactory;
 
     protected $fillable = [
-        'uuid',
         'title',
-        'path',
-        'alt',
-        'caption',
-        'updated_by',
-        'created_by',
+        'description',
     ];
 }
