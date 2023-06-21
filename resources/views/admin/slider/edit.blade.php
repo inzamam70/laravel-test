@@ -10,9 +10,9 @@
             <form action="{{ route('slider.update',$slider->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                         <label for="title">Title</label>
-                        <x-sg-text name="title"/>
+                        <input type="text" name="title" value="{{ $slider->title }}" class="form-control">
                         <label for="description">Description</label>
-                        <x-sg-text name="description"/>
+                        <input type="text" name="description" value="{{ $slider->description }}" class="form-control">
     
                         <div class="d-flex justify-content-start align-items-center">
                             {{-- <button type="submit" class="btn btn-light legitRipple">Cancel</button> --}}
