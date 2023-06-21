@@ -35,6 +35,13 @@ class SliderController extends Controller
         return redirect()->route('slider.index');
     }
 
+    public function show($id)
+    {
+        $slider = Slider::find($id);
+        
+        return view('admin.slider.show', compact('slider'));
+    }
+
     public function edit($id)
     {
         $slider = $this->slider->find($id);

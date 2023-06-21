@@ -5,33 +5,62 @@
     Create Slider
     </x-slot>
     <x-slot name="body">
-            <form action="#" method="post" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label>Title</label>
-                            <input name="title" type="text" class="form-control" placeholder="Enter Title">
-                        </div>
-    
-                        <div class="form-group">
-                            <label>Caption</label>
-                            <input name="caption" type="text" class="form-control" placeholder="Enter Caption">
-                        </div>
-    
-                        <div class="form-group">
-                            <label>Alt</label>
-                            <input name="alt" type="text" class="form-control" placeholder="Alter">
-                        </div>
-                        <div class="form-group">
-                            <label>Upload Picture</label>
-                            <input type="file" name="image" class="form-control" placeholder="Upload Picture">
-                        </div>
-    
-                        <div class="d-flex justify-content-start align-items-center">
-                            {{-- <button type="submit" class="btn btn-light legitRipple">Cancel</button> --}}
-                            <x-sg-custom-pink-color/>
-                            <button type="submit" class="btn bg-blue ml-3 legitRipple">Submit <i class="icon-paperplane ml-2"></i></button>
-                        </div>
-                    </form>
-    
+           <a href="{{ route('slider.create') }}"><button type="button" class="btn btn-primary">Create</button>
+            <table class="table datatable-highlight text-center" id="solid_tab0">
+                <thead>
+                    <th>Sl</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </thead>
+                @php
+                    $sl =1;
+                @endphp
+                <tbody>
+                    @foreach ($sliders as $slider)
+                        <tr>
+                            <td>{{ $sl++ }}</td>
+                            <td>{{ $slider->title }}</td>
+                            <td>{{ $slider->description }}</td>
+                            <td><a href="{{ route('slider.show', $slider->id) }}" class="btn 
+                                btn-sm 
+                                bg-success 
+                                border-2 
+                                border-success 
+                                btn-icon 
+                                rounded-round 
+                                legitRipple 
+                                shadow 
+                                mr-1">
+                                <i class="icon-eye"></i></a>
+                                <a href="{{ route('slider.edit', $slider->id) }}" class="btn 
+                                btn-sm 
+                                bg-primary 
+                                border-2 
+                                border-primary 
+                                btn-icon 
+                                rounded-round 
+                                legitRipple 
+                                shadow 
+                                mr-1">
+                                <i class="icon-pen"></i></a>
+                                
+                                <a href="{{ route('slider.destroy',$slider->id) }}"  class="btn 
+                                btn-sm 
+                                bg-danger 
+                                border-2 
+                                border-danger 
+                                btn-icon 
+                                rounded-round 
+                                legitRipple 
+                                shadow 
+                                mr-1">
+                                <i class="icon-trash"></i></a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
     </x-slot>
     <x-slot name="cardFooterCenter">
         End
