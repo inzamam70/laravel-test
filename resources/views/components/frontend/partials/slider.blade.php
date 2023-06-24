@@ -1,4 +1,7 @@
 
+
+
+
     <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -9,7 +12,7 @@
           <div class="carousel-item active">
             <img src="{{ asset('image/admin/carsol1.jpg') }}" class="d-block w-100" alt="...">
             <div class="carousel-caption ">
-              <h5>Best Quality Food</h5>
+              <h5>testy and jussy</h5>
               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
               <p><a href="#" class="btn btn-warning mt3">Show More</a></p>
             </div>

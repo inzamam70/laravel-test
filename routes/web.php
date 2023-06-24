@@ -1,8 +1,12 @@
 <?php
 
+
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SliderController;
+use App\Http\Controllers\ProductController;
+use App\Models\Front_slider;
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +37,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/slider/update/{id}', [SliderController::class, 'update'])->name('slider.update');
     Route::get('/slider/destroy/{id}', [SliderController::class, 'destroy'])->name('slider.destroy');
 
+    Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+    Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
+    Route::post('/product/store', [ProductController::class, 'store'])->name('product.store');
+    Route::get('/product/{id}/show', [ProductController::class, 'show'])->name('product.show');
+    Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+    Route::post('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
+    Route::get('/product/destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
 
     Route::get('/', function () {
         return view('welcome');
@@ -41,6 +52,8 @@ Route::middleware('auth')->group(function () {
         return view('form');
     });
     Route::get('/frontend', function () {
+        
+
         return view('frontend');
     });
     Route::get('/contact', function () {
