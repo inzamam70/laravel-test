@@ -11,16 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('front_users', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->unsignedBigInteger('permission_id');
-            $table->foreign('permission_id')->references('id')->on('permissions');
-            $table->boolean('can_update')->default(1);
-            $table->boolean('can_view')->default(1);
-            $table->boolean('can_create')->default(1);
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('address')->nullable();
+            $table->string('phone_no')->nullable();
+            // $table->unsignedBigInteger('role_id');
+            // $table->foreign('role_id')->references('id')->on('roles');
             $table->boolean('status')->default(1);
-
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('front__users');
     }
 };

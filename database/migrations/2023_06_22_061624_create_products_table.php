@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('brand_name');
             $table->text('description');
             $table->text('image');
-            $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('category_id')->references('id')->on('categories');
-            $table->foreign('user_id')->references('id')->on('users');
+            // $table->unsignedBigInteger('category_id');
+            // $table->unsignedBigInteger('user_id');
+            // $table->foreign('category_id')->references('id')->on('categories');
+            // $table->foreign('user_id')->references('id')->on('users');
             $table->boolean('status')->default(1);
             $table->timestamps();
         });

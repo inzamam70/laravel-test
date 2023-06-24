@@ -19,8 +19,7 @@ return new class extends Migration
             $table->string('total')->nullable();
             $table->string('price')->nullable();
             $table->string('qty')->nullable();
-            $table->unsignedBigInteger('invoice_id');
-            $table->foreign('invoice_id')->references('id')->on('invoices');
+            
             $table->boolean('status')->default(1);
             $table->timestamps();
         });

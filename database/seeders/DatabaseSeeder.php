@@ -21,6 +21,15 @@ class DatabaseSeeder extends Seeder
         $this->call([
             FrontSliderSeeder::class,
             PermissionSeeder::class,
+            RoleSeeder::class,
+            CategorySeeder::class,
+            FrontUserSeeder::class,
+            CustomerSeeder::class,
+            ProductSeeder::class,
+            InvoiceSeeder::class,
+            InvoiceDetailSeeder::class,
+
+
         ]);
     }
 }

@@ -7,6 +7,13 @@
     <x-slot name="body">
             <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                <label for="category_id">Category</label>
+                <select name="category_id" id="category_id" class="form-control">
+                    <option value="">Select Category</option>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                </select>
                         <label for="name">name</label>
                         <x-sg-text name="name"/>
                         <label for="category_name">Catagoery-name</label>
