@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FrontUserController;
+use App\Models\Front_User;
 use App\Models\Category;
 use App\Models\Front_slider;
 use App\Models\Product;
@@ -31,7 +33,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/slider', [SliderController::class, 'index'])->name('slider.index');
+    Route::get('/slider', [SliderController::class, 'index'])->name('slider.index2');
     Route::get('/slider/create', [SliderController::class, 'create'])->name('slider.create');
     Route::post('/slider/store', [SliderController::class, 'store'])->name('slider.store');
     Route::get('/slider/{id}/show', [SliderController::class, 'show'])->name('slider.show');
@@ -55,6 +57,14 @@ Route::middleware('auth')->group(function () {
     Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('category.update');
     Route::get('/category/destroy/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
 
+    Route::get('/user/index', [FrontUserController::class, 'index'])->name('front_user.index');
+    Route::get('/user/create', [FrontUserController::class, 'create'])->name('front_user.create');
+    Route::post('/user/store', [FrontUserController::class, 'store'])->name('front_user.store');
+    Route::get('/user/show/{id}', [FrontUserController::class, 'show'])->name('front_user.show');
+    Route::get('/user/edit/{id}', [FrontUserController::class, 'edit'])->name('front_user.edit');
+    Route::post('/user/update/{id}', [FrontUserController::class, 'update'])->name('front_user.update');
+    Route::get('/user/destroy/{id}', [FrontUserController::class, 'destroy'])->name('front_user.destroy');
+
     Route::get('/', function () {
         return view('welcome');
     });
@@ -62,7 +72,7 @@ Route::middleware('auth')->group(function () {
         return view('form');
     });
     Route::get('/frontend', function () {
-        
+
 
         return view('frontend');
     });
@@ -75,7 +85,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/cart', function () {
         return view('components.frontend.partials.cart');
     });
-    
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

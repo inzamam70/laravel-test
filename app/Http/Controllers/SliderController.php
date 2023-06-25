@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Slider;
+use App\Models\Front_slider;
 use Illuminate\Http\Request;
 
 class SliderController extends Controller
 {
     protected $slider;
 
-    public function __construct(Slider $slider)
+    public function __construct(Front_slider $slider)
     {
         $this->slider = $slider;
     }
@@ -17,7 +17,7 @@ class SliderController extends Controller
     public function index()
     {
         $sliders = $this->slider->latest()->paginate(5);
-        return view('admin.slider.index', compact('sliders'));
+        return view('admin.slider.index2', compact('sliders'));
     }
 
     public function create()
@@ -32,12 +32,12 @@ class SliderController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->route('slider.index');
+        return redirect()->route('slider.index2');
     }
 
     public function show($id)
     {
-        $slider = Slider::find($id);
+        $slider = Front_slider::find($id);
         
         return view('admin.slider.show', compact('slider'));
     }
@@ -55,13 +55,13 @@ class SliderController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->route('slider.index');
+        return redirect()->route('slider.index2');
     }
 
     public function destroy($id)
     {
         $this->slider->find($id)->delete();
-        return redirect()->route('slider.index');
+        return redirect()->route('slider.index2');
     }
 
 }

@@ -2,7 +2,7 @@
     <!-- Dashboard content -->
     <x-sg-card>
     <x-slot name="heading">
-    Create Slider
+    Create Product
     </x-slot>
     <x-slot name="body">
             <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">

@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Front_User extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'email',
+        'address',
+        'phone_no',
+    ];
+    protected $table = 'front_users';
 }
