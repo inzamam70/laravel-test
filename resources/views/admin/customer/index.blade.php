@@ -2,10 +2,10 @@
     <!-- Dashboard content -->
     <x-sg-card>
     <x-slot name="heading">
-    Create User
+    Create Customer
     </x-slot>
     <x-slot name="body">
-           <a href="{{ route('front_user.create') }}"><button type="button" class="btn btn-primary">Create</button>
+           <a href="{{ route('customer.create') }}"><button type="button" class="btn btn-primary">Create</button>
             <table class="table datatable-highlight text-center" id="solid_tab0">
                 <thead>
                     <th>Sl</th>
@@ -19,14 +19,14 @@
                     $sl =1;
                 @endphp
                 <tbody>
-                    @foreach ($users as $user)
+                    @foreach ($customers as $customer)
                         <tr>
                             <td>{{ $sl++ }}</td>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>{{ $user->address }}</td>
-                            <td>{{ $user->phone_no }}</td>
-                            <td><a href="{{ route('front_user.show', $user->id) }}" class="btn 
+                            <td>{{ $customer->name }}</td>
+                            <td>{{ $customer->email }}</td>
+                            <td>{{ $customer->address }}</td>
+                            <td>{{ $customer->phone_no }}</td>
+                            <td><a href="{{ route('customer.show', $customer->id) }}" class="btn 
                                 btn-sm 
                                 bg-success 
                                 border-2 
@@ -37,7 +37,7 @@
                                 shadow 
                                 mr-1">
                                 <i class="icon-eye"></i></a>
-                                <a href="{{ route('front_user.edit', $user->id) }}" class="btn 
+                                <a href="{{ route('customer.edit', $customer->id) }}" class="btn 
                                 btn-sm 
                                 bg-primary 
                                 border-2 
@@ -49,7 +49,7 @@
                                 mr-1">
                                 <i class="icon-pen"></i></a>
                                 
-                                <a href="{{ route('front_user.destroy',$user->id) }}"  class="btn 
+                                <a href="{{ route('customer.destroy',$customer->id) }}"  class="btn 
                                 btn-sm 
                                 bg-danger 
                                 border-2 
@@ -60,7 +60,6 @@
                                 shadow 
                                 mr-1">
                                 <i class="icon-trash"></i></a>
-                               
                             </td>
                         </tr>
                     @endforeach
@@ -73,4 +72,4 @@
     </x-sg-card>
     <!-- /dashboard content -->
     </x-sg-master>
-    {{-- //{{ route('front_profile.create',$user->id) }} --}}
+    {{-- //{{ route('front_profile.create',$customer->id) }} --}}

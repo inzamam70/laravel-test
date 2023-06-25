@@ -7,10 +7,16 @@ use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FrontUserController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\FrontProfileController;
+use App\Http\Controllers\Profile2Controller;
 use App\Models\Front_User;
 use App\Models\Category;
 use App\Models\Front_slider;
 use App\Models\Product;
+use App\Models\Customer;
+use App\Models\Front_Profile;
+use App\Models\Profile2;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,6 +70,22 @@ Route::middleware('auth')->group(function () {
     Route::get('/user/edit/{id}', [FrontUserController::class, 'edit'])->name('front_user.edit');
     Route::post('/user/update/{id}', [FrontUserController::class, 'update'])->name('front_user.update');
     Route::get('/user/destroy/{id}', [FrontUserController::class, 'destroy'])->name('front_user.destroy');
+
+    Route::get('/customer', [CustomerController::class, 'index'])->name('customer.index');
+    Route::get('/customer/create', [CustomerController::class, 'create'])->name('customer.create');
+    Route::post('/customer/store', [CustomerController::class, 'store'])->name('customer.store');
+    Route::get('/customer/show/{id}', [CustomerController::class, 'show'])->name('customer.show');
+    Route::get('/customer/edit/{id}', [CustomerController::class, 'edit'])->name('customer.edit');
+    Route::post('/customer/update/{id}', [CustomerController::class, 'update'])->name('customer.update');
+    Route::get('/customer/destroy/{id}', [CustomerController::class, 'destroy'])->name('customer.destroy');
+
+    Route::get('/profile2',[Profile2Controller::class,'index'])->name('profile2.index');
+    Route::get('/profile2/create',[Profile2Controller::class,'create'])->name('profile2.create');
+    Route::post('/profile2/store',[Profile2Controller::class,'store'])->name('profile2.store');
+    Route::get('/profile2/show/{id}',[Profile2Controller::class,'show'])->name('profile2.show');
+    Route::get('/profile2/edit/{id}',[Profile2Controller::class,'edit'])->name('profile2.edit');
+    Route::post('/profile2/update/{id}',[Profile2Controller::class,'update'])->name('profile2.update');
+    Route::get('/profile2/destroy/{id}',[Profile2Controller::class,'destroy'])->name('profile2.destroy');
 
     Route::get('/', function () {
         return view('welcome');

@@ -1,15 +1,18 @@
 <x-sg-master>
     <x-sg-card>
         <x-slot name="heading">
-            Slider :
-            <a class="btn btn-primary" href="{{ route('slider.index') }}"> Back</a>
+            Profile :
+            <a class="btn btn-primary" href="{{ route('profile2.index') }}"> Back</a>
         </x-slot>
         <x-slot name="body">
             <div class="form-group">
-                <h1>Slider :
-                    {{ $slider->title }}
+                <h1>Profile :
                     <br>
-                    {{ $slider->description }}
+                    {{ $profile2->name }}
+                    <br>
+                    {{ $profile2->phone }}
+                    <br>
+                    {{ $profile2->gender }}
                 </h1>
             </div>
         </x-slot>

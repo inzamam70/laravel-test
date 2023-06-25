@@ -3,8 +3,8 @@
     <!-- Dashboard content -->
     <x-sg-card>
     <x-slot name="heading">
-    Edit Slider
-    <a class="btn btn-primary" href="{{ route('slider.index') }}"> Back</a>
+    Edit Product
+    <a class="btn btn-primary" href="{{ route('product.index') }}"> Back</a>
     </x-slot>
     <x-slot name="body">
             <form action="{{ route('product.update',$product->id) }}" method="POST" enctype="multipart/form-data">

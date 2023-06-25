@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Front_User;
+use App\Models\Profile2;
 
 class FrontUserController extends Controller
 {
@@ -21,11 +22,13 @@ class FrontUserController extends Controller
     }
     public function create()
     {
-        return view('admin.front_user.create');
+        $profile2s = Profile2::all();  
+        return view('admin.front_user.create',compact('profile2s'));
     }
     public function store(Request $request)
     {
         Front_User::create([
+            'profile2_id' => $request->profile2_id,
             'name' => $request->name,
             'email' => $request->email,
             'address' => $request->address,
