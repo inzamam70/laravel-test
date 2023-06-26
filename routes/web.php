@@ -10,7 +10,7 @@ use App\Http\Controllers\FrontUserController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\FrontProfileController;
 use App\Http\Controllers\Profile2Controller;
-use App\Models\Front_User;
+use App\Models\FrontUser;
 use App\Models\Category;
 use App\Models\Front_slider;
 use App\Models\Product;

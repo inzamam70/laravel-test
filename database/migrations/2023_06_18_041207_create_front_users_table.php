@@ -13,13 +13,10 @@ return new class extends Migration
     {
         Schema::create('front_users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
             $table->string('address')->nullable();
             $table->string('phone_no')->nullable();
-            // $table->unsignedBigInteger('role_id');
-            // $table->foreign('role_id')->references('id')->on('roles');
-            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('front__users');
+        Schema::dropIfExists('front_users');
     }
 };

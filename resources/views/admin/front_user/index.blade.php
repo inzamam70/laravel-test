@@ -19,7 +19,7 @@
                     $sl =1;
                 @endphp
                 <tbody>
-                    @foreach ($users as $user)
+                    @foreach ($frontusers as $user)
                         <tr>
                             <td>{{ $sl++ }}</td>
                             <td>{{ $user->name }}</td>

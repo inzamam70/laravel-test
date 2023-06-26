@@ -57,4 +57,5 @@ class CustomerController extends Controller
         Customer::find($id)->delete();
         return redirect()->route('customer.index');
     }
+    
 }
